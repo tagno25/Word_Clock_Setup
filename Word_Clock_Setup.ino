@@ -4,6 +4,8 @@
 #include <TimeAlarms.h> //Time Scheduling
 #include <Timezone.h>    //Required to set the timzone
 
+#include <EEPROM.h> //Used to read and write the time to EEPROM
+
 #define TIME_MSG_LEN  11   // time sync to PC is HEADER followed by Unix time_t as ten ASCII digits
 #define TIME_HEADER  'T'   // Header tag for serial time sync message
 #define TIME_REQUEST  7    // ASCII bell character requests a time sync message 
