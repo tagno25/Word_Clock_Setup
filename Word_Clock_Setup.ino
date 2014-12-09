@@ -1,3 +1,6 @@
+//Linux:
+//  echo T`date +%s`
+
 #include <Wire.h> //required for DS1307RTC.h
 #include <Time.h>  
 #include <DS1307RTC.h> //required for RTC
