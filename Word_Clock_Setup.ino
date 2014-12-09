@@ -14,7 +14,7 @@
 
 void setup()  {
   Serial.begin(9600);
-  SaveTZ();
+//  SaveTZ();
   setSyncProvider(RTC.get);   // the function to get the time from the RTC
   setSyncInterval(5);
 }
@@ -76,13 +76,13 @@ void processSyncMessage() {
 void SaveTZ(){
 
   TimeChangeRule usEdt = {"EDT", Second, Sun, Mar, 2, -240};
-  TimeChangeRule usEst = {"EST", Second, Sun, Mar, 2, -300};
+  TimeChangeRule usEst = {"EST", First, Sun, Nov, 2, -300};
   TimeChangeRule usCdt = {"CDT", Second, Sun, Mar, 2, -300};
-  TimeChangeRule usCst = {"CST", Second, Sun, Mar, 2, -360};
+  TimeChangeRule usCst = {"CST", First, Sun, Nov, 2, -360};
   TimeChangeRule usMdt = {"MDT", Second, Sun, Mar, 2, -360};
-  TimeChangeRule usMst = {"MST", Second, Sun, Mar, 2, -420};
+  TimeChangeRule usMst = {"MST", First, Sun, Nov, 2, -420};
   TimeChangeRule usPdt = {"PDT", Second, Sun, Mar, 2, -420};
-  TimeChangeRule usPst = {"PST", Second, Sun, Mar, 2, -480};
+  TimeChangeRule usPst = {"PST", First, Sun, Nov, 2, -480};
 
   Timezone timeZoneE(usEdt, usEst);
   timeZoneE.writeRules(100);
